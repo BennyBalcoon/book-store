@@ -15,6 +15,7 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   { path: 'books', canActivate:[AuthGuardService], component: BookListComponent },
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes, {enableTracing: false})
+    RouterModule.forRoot(appRoutes, {enableTracing: false}),
+    NgbModule
   ],
   providers: [AuthGuardService, AuthService],
   bootstrap: [AppComponent]

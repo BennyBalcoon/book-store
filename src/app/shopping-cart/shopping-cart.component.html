@@ -22,7 +22,7 @@
                             <td></td>
                             <td>{{item.volumeInfo.title}}</td>
                             <td>In stock</td>
-                            <td><input class="form-control" type="number" value="1" step="1"/></td>
+                            <td><input class="form-control" type="number" value="1" step="1" min="1"/></td>
                             <td class="text-right">{{ item.saleInfo.listPrice?.amount | currency }}</td>
                             <td class="text-right"><button (click)="cartService.deleteToCart()" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                         </tr>
