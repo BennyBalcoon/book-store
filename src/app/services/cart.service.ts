@@ -13,6 +13,10 @@ export class CartService {
         this.items.push(product);
     }
 
+    deleteToCart() {
+        this.items.splice(this.items.length-1, 1);
+      }
+
     getItems() {
         return this.items;
     }
@@ -21,4 +25,6 @@ export class CartService {
         this.items = [];
         return this.items;
     }
+
+
 }
