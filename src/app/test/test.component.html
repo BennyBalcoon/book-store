@@ -1,0 +1,11 @@
+<div class="tabs-head">
+  <div (click)="setTab('1')">Bouton 1</div>
+  <div (click)="setTab('2')">Bouton 2</div>
+  <div (click)="setTab('3')">Bouton 3</div>
+</div>
+<div *ngIf="currentTab === '1'" class="tab-content">Contenu 1</div>
+<div *ngIf="currentTab === '2'" class="tab-content">Contenu 2</div>
+<div *ngIf="currentTab === '3'" class="tab-content">Contenu 3</div>
+<div>
+    <p *ngFor="let comment of comments">{{comment}}</p>
+</div>

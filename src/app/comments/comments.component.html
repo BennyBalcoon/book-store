@@ -1,0 +1,11 @@
+<div *ngIf="commentsService.comments; then comments else loading"></div>
+<ng-template #comments>
+    <dl *ngFor="let comment of commentsService.comments">
+        <dt><strong>{{comment.name}}</strong></dt>
+        <dd>{{ comment.about }}</dd>
+    </dl>
+</ng-template>
+<ng-template #loading>Loading...</ng-template>
+
+<!-- <div *ngIf="commentsService.data; else loading"></div>
+<ng-template #loading>Loading...</ng-template> -->

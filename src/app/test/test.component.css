@@ -1,0 +1,15 @@
+.tabs-head {
+  display: flex;
+}
+
+.tabs-head>div {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid black;
+}
+
+.tab-content {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid black;
+}

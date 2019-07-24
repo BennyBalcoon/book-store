@@ -1,0 +1,21 @@
+<!-- <button class="btn btn-outline-primary">Ajouter au panier</button> -->
+<br>
+<div *ngIf="book">
+  <ul>
+    <li>Titre : {{ book.volumeInfo.title }}<button class="btn btn-outline-primary" routerLink="/shopping-cart">Ajouter au panier</button></li><br>
+    <li>Auteur(s) : {{book.volumeInfo.authors}}</li><br>
+    <li>Genre : {{book.volumeInfo.categories}}</li><br>
+    <li>Editeur : {{book.volumeInfo.publisher}}</li><br>
+    <li>Description : {{book.volumeInfo.description}}</li><br>
+    <li>ISBN13: {{book.volumeInfo.industryIdentifiers[1].identifier}} | ISBN10 :
+      {{book.volumeInfo.industryIdentifiers[0].identifier}} </li><br>
+    <li>Nbre de Page : {{book.volumeInfo.pageCount}}</li><br>
+    <li>Langue : {{book.volumeInfo.language}}</li><br>
+    <li>Ebook : {{book.saleInfo.isEbook ?  'Oui' : 'Non'}}</li><br>
+    <li>Photo Couv <img [src]="book.volumeInfo.imageLinks?.thumbnail"></li><br>
+    <li>RATING : {{book.volumeInfo.averageRating || "Not Here"}}</li><br>
+    <li>Prix : {{book.saleInfo.listPrice?.amount || 'Not for sale' }} {{book.saleInfo.listPrice?.currencyCode}}<button class="btn btn-outline-primary" routerLink="/shopping-cart">Ajouter au panier</button></li>
+  </ul>
+</div>
+
+<a routerLink="/books">Retour à la liste</a>

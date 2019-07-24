@@ -1,0 +1,9 @@
+<input [(ngModel)]="searchQuery" (keydown.enter)="search()"/>
+<button (click)="search()">Envoyer</button>
+<div *ngIf="searchResults != null">
+    <dl *ngFor="let book of searchResults.items">
+        <dt><strong>{{ book.volumeInfo.title }}</strong></dt>
+        <dd><em>{{ book.volumeInfo.authors }}</em></dd>
+    </dl>
+    <button (click)="showMore()">See more</button>
+</div>
