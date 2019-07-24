@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from '../services/books.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-book-list',
@@ -11,7 +12,7 @@ export class BookListComponent implements OnInit {
   searchQuery : string = '';
   searchResults = null;
 
-  constructor(private booksService : BooksService) {this.searchResults=this.booksService.result
+  constructor(private booksService : BooksService, private cartService: CartService) {this.searchResults=this.booksService.result
    }
 
   ngOnInit() {
@@ -34,6 +35,11 @@ export class BookListComponent implements OnInit {
     }, (error) => {
       console.log(error);
     });  
+  }
+
+  addToCart(product) {
+    window.alert('Your product has been added to the cart!');
+    this.cartService.addToCart(product);
   }
 
 }

@@ -9,7 +9,7 @@
         <dd><em>{{ book.volumeInfo.authors }}</em></dd>
         <dd>{{book.volumeInfo.description }}</dd>
         <img [src]="book.volumeInfo.imageLinks?.thumbnail">
-    <button class="btn btn-outline-primary" routerLink="/shopping-cart">Ajouter au panier</button>
+    <button class="btn btn-outline-primary" routerLink="/shopping-cart" (click)="addToCart(book)">Ajouter au panier</button>
     </dl>
     <button (click)="showMore()">See more</button>
 </div>
