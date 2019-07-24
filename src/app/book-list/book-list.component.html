@@ -1,5 +1,7 @@
-<br>
-<input [(ngModel)]="searchQuery" (keydown.enter)="search()" placeholder="What bouquin do yo want?"/>
+<div class="title">
+    <h3>What bouquin do yo want?</h3>
+</div>
+<input [(ngModel)]="searchQuery" (keydown.enter)="search()" placeholder="search"/>
 <button class="btn btn-outline-primary" (click)="search()">Envoyer</button>
 <div *ngIf="searchResults != null">
     <dl *ngFor="let book of searchResults.items">

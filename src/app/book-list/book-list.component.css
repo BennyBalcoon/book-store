@@ -6,3 +6,10 @@ dl {
     border-bottom: 2px solid #047AFB;
     padding-bottom: 10px;
 }
+
+h3 {
+    background-color: #047AFB;
+    color: white;
+    margin-top: 10px;
+    border-radius: 4px;
+}
