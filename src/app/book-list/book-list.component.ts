@@ -38,7 +38,6 @@ export class BookListComponent implements OnInit {
   }
 
   addToCart(product) {
-    window.alert('Your product has been added to the cart!');
     this.cartService.addToCart(product);
   }
 
