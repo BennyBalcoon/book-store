@@ -6,10 +6,11 @@
 <div *ngIf="searchResults != null">
     <dl *ngFor="let book of searchResults.items">
         <a [routerLink]="['/books/',book.id]"><dt><strong>{{ book.volumeInfo.title }}</strong></dt></a>
-        <dd><em>{{ book.volumeInfo.authors }}</em></dd>
-        <dd>{{book.volumeInfo.description }}</dd>
+        <dd><em>Auteur(s) : {{ book.volumeInfo.authors }}</em></dd>
+        <dd>Prix : {{ book.saleInfo.listPrice?.amount || "10"}}€</dd>
+        <dd>{{ book.volumeInfo.averageRating || "Not rated yet" }}</dd>
         <img [src]="book.volumeInfo.imageLinks?.thumbnail">
-    <button class="btn btn-outline-primary" routerLink="/shopping-cart" (click)="addToCart(book)">Ajouter au panier</button>
+    <button *ngIf="book.saleInfo.listPrice?.amount" class="btn btn-outline-primary" routerLink="/shopping-cart" (click)="addToCart(book)">Ajouter au panier</button>
     </dl>
     <button (click)="showMore()">See more</button>
 </div>
